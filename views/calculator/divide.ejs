@@ -18,13 +18,13 @@
                 <label for="secondNumber">Enter Second Number: </label>
                 <input type="number" id="secondNumber" name="secondNumber">
             </div>
-            <button id="add">Divide</button>
+            <button id="divide">Divide</button>
         </form>
         <article id="result">
         </article>
     </section>  
     <script>
-        const add = document.querySelector('#add');
+        const add = document.querySelector('#divide');
         add.addEventListener('click', (e) => {
             e.preventDefault();
             let firstNumber = parseFloat(document.querySelector('#firstNumber').value);
