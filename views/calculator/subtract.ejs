@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Subtraction</h1>
+    <section>
+        <form>
+            <div>
+                <label for="firstNumber">Enter First Number: </label>
+                <input type="number" id="firstNumber" name="firstNumber">
+            </div>
+            <div>
+                <label for="secondNumber">Enter Second Number: </label>
+                <input type="number" id="secondNumber" name="secondNumber">
+            </div>
+            <button id="add">Subtract</button>
+        </form>
+        <article id="result">
+        </article>
+    </section>  
+    <script>
+        const add = document.querySelector('#add');
+        add.addEventListener('click', (e) => {
+            e.preventDefault();
+            let firstNumber = parseFloat(document.querySelector('#firstNumber').value);
+            let secondNumber =  parseFloat(document.querySelector('#secondNumber').value);
+            const result = document.querySelector('#result');
+            result.innerText = firstNumber - secondNumber;
+        });
+    </script>  
+</body>
+</html>
