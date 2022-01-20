@@ -16,6 +16,10 @@ app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.get('/binarytodecimal', (req, res) => {
+    res.render('converter/binaryToDecimal');
+});
+
 app.get('/multiply', (req, res) => {
     res.render('calculator/multiply');
 });

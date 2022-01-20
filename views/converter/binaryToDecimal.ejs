@@ -1,20 +1,35 @@
 <%- layout('layouts/boilerplate')  %> 
 <h1>Change Binary Number to Decimal Number</h1>
 
+<form>
+	<div>
+		<label for="binary">Enter a Binary Number: </label>
+		<input type="number" name="binary" id="binary">
+	</div>
+	<button id="convert">Convert</button>
+</form>
+<article id="result"></article>
+
 <script>
-let binaryNumber = 1010;
-let rem;
-let decimalNumber = 0;
-let binaryDigits = [];
+	const convert = document.querySelector('#convert');
+	convert.addEventListener('click', e => {
+		e.preventDefault();
+		let binaryNumber = document.querySelector('#binary').value;
+		let rem;
+		let decimalNumber = 0;
+		let binaryDigits = [];
 
-while(binaryNumber){
-	rem = binaryNumber%10;
-	binaryNumber = parseInt(binaryNumber/10);
-	binaryDigits.push(rem);
-}
+		while(binaryNumber){
+			rem = binaryNumber%10;
+			binaryNumber = parseInt(binaryNumber/10);
+			binaryDigits.push(rem);
+		}
 
-for(let i=0; i < binaryDigits.length; i++){
-	decimalNumber = decimalNumber + binaryDigits[i] * Math.pow(2, i);
-}
-console.log(decimalNumber)
+		for(let i=0; i < binaryDigits.length; i++){
+			decimalNumber = decimalNumber + binaryDigits[i] * Math.pow(2, i);
+		}
+		console.log(decimalNumber)
+		let result = document.querySelector('#result');
+		result.innerText = decimalNumber;
+	});
 </script>
